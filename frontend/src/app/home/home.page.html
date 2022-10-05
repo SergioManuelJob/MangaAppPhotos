@@ -25,7 +25,7 @@
           <ion-button routerLink="/update-manga/{{m.id}}" class="btn-update"><ion-icon name="brush-outline"></ion-icon></ion-button>
           <ion-button class="btn-delete" color="danger" size="small" (click)="deleteManga(m.id)">X</ion-button>
         </h1>
-        <ion-img class="imagenes" src={{m.imagen}}></ion-img>
+        <img *ngIf="b.filename" src="http://localhost:8080/images/{{b.filename}}" alt="image"/>
         <p>Pages: {{m.pages}}</p>
         <p>Volume: {{m.volume}}</p>
         <p>Genre: {{m.genre}}</p>

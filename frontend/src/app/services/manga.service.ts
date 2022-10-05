@@ -7,7 +7,7 @@ import { Manga } from '../interfaces/manga';
 })
 export class MangaService {
  
-  endpoint: string = "http://localhost:8080/api/manga"
+  endpoint: string = "http://localhost:8080/api/mangas"
  
   constructor(private httpClient: HttpClient) { }
  
