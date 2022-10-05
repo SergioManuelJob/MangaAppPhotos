@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MangaService } from '../services/manga.service';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-update-manga',
@@ -11,14 +12,23 @@ import { MangaService } from '../services/manga.service';
 export class UpdateMangaPage implements OnInit {
 
   updateMangaFg: FormGroup;
+  isSubmitted: boolean = false;
+  capturedPhoto: string = "";
   id: any;
 
   constructor(private mangaService: MangaService, 
     private activatedRoute: ActivatedRoute,
-     private router: Router,
-     public formBuilder: FormBuilder) 
+    private photoService: PhotoService,
+    private router: Router,
+    public formBuilder: FormBuilder)  
      {
       this.id = this.activatedRoute.snapshot.paramMap.get("id"); 
+  }
+
+  ionViewWillEnter() {
+    this.updateMangaFg.reset();
+    this.isSubmitted = false;
+    this.capturedPhoto = "";
   }
 
   ngOnInit() {
@@ -27,8 +37,7 @@ export class UpdateMangaPage implements OnInit {
       title: [''],
       pages: [''],
       volume: [''],
-      genre: [''],
-      imagen: ['']
+      genre: ['']
     })
   }
   
@@ -38,23 +47,44 @@ export class UpdateMangaPage implements OnInit {
         title: data['title'],
         pages: data['pages'],
         volume: data['volume'],
-        genre: data['genre'],
-        imagen: data['imagen']  
+        genre: data['genre']
       })
     })
   }
 
-  onSubmit() {
-    if (!this.updateMangaFg.valid){
+  takePhoto() {
+    this.photoService.takePhoto().then(data => {
+      this.capturedPhoto = data.webPath;
+    });
+  }
+
+  pickImage() {
+    this.photoService.pickImage().then(data => {
+      this.capturedPhoto = data.webPath;
+    });
+  }
+
+  discardImage() {
+    this.capturedPhoto = null;
+  }
+
+  async onSubmit() {
+    this.isSubmitted = true;
+    if (!this.updateMangaFg.valid) {
+      console.log('Please provide all the required values!')
       return false;
     } else {
-      this.mangaService.updateManga(this.id, this.updateMangaFg.value).subscribe(() => {
-        this.updateMangaFg.reset();
-        this.router.navigate(["/home"]);
-      })
-    }  
+      let blob = null;
+      if (this.capturedPhoto != "") {
+        const response = await fetch(this.capturedPhoto);
+        blob = await response.blob();
+      }
 
-    
+      this.mangaService.createManga(this.updateMangaFg.value, blob).subscribe(data => {
+        console.log("Photo sent!");
+        this.router.navigateByUrl("/home");
+      })
+    } 
   }
 
   goBackHome(){

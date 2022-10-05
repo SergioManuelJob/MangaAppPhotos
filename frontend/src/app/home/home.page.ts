@@ -27,15 +27,15 @@ export class HomePage {
     });
   }
 
-  getOneManga(id: number){
-    this.mangaService.getOneManga(id).subscribe(data => {
-      this.mangas = data;
-    })
-  }
+  // getOneManga(id: number){
+  //   this.mangaService.getOneManga(id).subscribe(data => {
+  //     this.mangas = data;
+  //   })
+  // }
 
-  deleteManga(id: number){
-    this.mangaService.deleteManga(id).subscribe(data =>{});
-  }
+  // deleteManga(id: number){
+  //   this.mangaService.deleteManga(id).subscribe(data =>{});
+  // }
   
 }
 

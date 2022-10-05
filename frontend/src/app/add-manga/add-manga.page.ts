@@ -23,7 +23,7 @@ export class AddMangaPage implements OnInit {
     private router: Router,
     public formBuilder: FormBuilder) 
      {
-      this.id = this.activatedRoute.snapshot.paramMap.get("id"); 
+      
   }
 
   ionViewWillEnter() {
