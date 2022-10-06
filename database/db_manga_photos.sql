@@ -34,7 +34,7 @@ CREATE TABLE `mangas` (
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `mangas` (
 
 LOCK TABLES `mangas` WRITE;
 /*!40000 ALTER TABLE `mangas` DISABLE KEYS */;
-INSERT INTO `mangas` VALUES (1,'Ijiranaide, Nagatoro-san',104,1,'RomCom','image-1665014959951.jpg','2022-10-06 00:09:19','2022-10-06 00:09:19');
+INSERT INTO `mangas` VALUES (6,'Ijiranaide, Nagatoro-san',93,1,'RomCom','image-1665077358800.jpg','2022-10-06 17:29:18','2022-10-06 18:33:15'),(10,'Akame ga kill',104,3,'RomCom','image-1665081392379.jpg','2022-10-06 18:36:32','2022-10-06 18:55:43');
 /*!40000 ALTER TABLE `mangas` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-06  1:32:26
+-- Dump completed on 2022-10-06 20:09:12
