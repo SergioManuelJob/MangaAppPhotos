@@ -36,7 +36,7 @@ export class AddMangaPage implements OnInit {
       title: [''],
       pages: [''],
       volume: [''],
-      genre: [''],
+      genre: ['']
     })
   }
   
@@ -68,7 +68,6 @@ export class AddMangaPage implements OnInit {
         const response = await fetch(this.capturedPhoto);
         blob = await response.blob();
       }
-
       this.mangaService.createManga(this.createMangaFg.value, blob).subscribe(data => {
         console.log("Photo sent!");
         this.router.navigate(["/home"]);

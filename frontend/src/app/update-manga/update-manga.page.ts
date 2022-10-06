@@ -80,7 +80,7 @@ export class UpdateMangaPage implements OnInit {
         blob = await response.blob();
       }
 
-      this.mangaService.createManga(this.updateMangaFg.value, blob).subscribe(data => {
+      this.mangaService.createManga(this.id, this.updateMangaFg.value).subscribe(data => {
         console.log("Photo sent!");
         this.router.navigateByUrl("/home");
       })

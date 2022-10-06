@@ -33,9 +33,10 @@ export class HomePage {
   //   })
   // }
 
-  // deleteManga(id: number){
-  //   this.mangaService.deleteManga(id).subscribe(data =>{});
-  // }
+  deleteManga(id: number){
+    this.mangaService.deleteManga(id).subscribe(data =>{});
+    window.location.reload();
+  }
   
 }
 

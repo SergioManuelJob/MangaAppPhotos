@@ -16,30 +16,29 @@ export class MangaService {
   }
 
   getOneManga(id: number){
-    return this.httpClient.get<Manga>(this.endpoint + "/" + id);  
+    return this.httpClient.get(this.endpoint + "/" + id);  
   }
 
   deleteManga(id: number){
     return this.httpClient.delete<Manga>(this.endpoint + "/" + id);
   }
 
-  updateManga(id: number, manga: Manga, blob){
+  updateManga(id: number, manga: Manga){
     let data = new FormData();
     data.append("title", manga.title)
     data.append("pages", manga.pages.toString())
     data.append("volume",manga.volume.toString())
     data.append("genre",manga.genre)
-    data.append("imagen", blob)
     return this.httpClient.put(this.endpoint + "/" + id, data);
   }
 
-  createManga(manga: Manga, blob){
+  createManga(manga, blob){
     let formData = new FormData();
-    formData.append("title", manga.title)
-    formData.append("pages", manga.pages.toString())
-    formData.append("volume",manga.volume.toString())
-    formData.append("genre",manga.genre)
-    formData.append("imagen", blob)
+    formData.append("title", manga.title);
+    formData.append("pages", manga.pages.toString());
+    formData.append("volume",manga.volume.toString());
+    formData.append("genre",manga.genre);
+    formData.append("file", blob);
     return this.httpClient.post(this.endpoint, formData);
   }
   
