@@ -65,8 +65,9 @@ exports.findOne = (req, res) => {
 // Update a Bicycle by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
-
-  Bicycle.update(req.body, {
+  console.log(req.body.file)
+  console.log(req.body.filename)
+  Bicycle.update({title: req.body.title, pages: req.body.pages, volume: req.body.volume, genre: req.body.genre, filename: req.body.filename}, {
     where: { id: id }
   })
     .then(num => {
@@ -75,6 +76,8 @@ exports.update = (req, res) => {
           message: "Manga was updated successfully."
         });
       } else {
+      console.log("HE PASADO POR AQUI");
+      console.log(num);
         res.send({
           message: `Cannot update Manga with id=${id}. Maybe Manga was not found or req.body is empty!`
         });

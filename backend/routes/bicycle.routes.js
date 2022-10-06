@@ -14,7 +14,7 @@ module.exports = app => {
   router.get("/:id", bicycles.findOne);
 
   // Update a Bicycle with id
-  router.put("/:id", bicycles.update);
+  router.put("/:id", upload.single('file'), bicycles.update);
 
   // Delete a Bicycle with id
   router.delete("/:id", bicycles.delete);
