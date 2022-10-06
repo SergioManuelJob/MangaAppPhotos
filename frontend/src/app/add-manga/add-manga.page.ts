@@ -12,10 +12,9 @@ import { PhotoService } from '../services/photo.service';
 })
 export class AddMangaPage implements OnInit {
 
-  updateMangaFg: FormGroup;
+  createMangaFg: FormGroup;
   isSubmitted: boolean = false;
   capturedPhoto: string = "";
-  id: any;
 
   constructor(private mangaService: MangaService, 
     private activatedRoute: ActivatedRoute,
@@ -27,13 +26,13 @@ export class AddMangaPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.updateMangaFg.reset();
+    this.createMangaFg.reset();
     this.isSubmitted = false;
     this.capturedPhoto = "";
   }
 
   ngOnInit() {
-    this.updateMangaFg = this.formBuilder.group({
+    this.createMangaFg = this.formBuilder.group({
       title: [''],
       pages: [''],
       volume: [''],
@@ -60,7 +59,7 @@ export class AddMangaPage implements OnInit {
 
   async onSubmit() {
     this.isSubmitted = true;
-    if (!this.updateMangaFg.valid) {
+    if (!this.createMangaFg.valid) {
       console.log('Please provide all the required values!')
       return false;
     } else {
@@ -70,9 +69,9 @@ export class AddMangaPage implements OnInit {
         blob = await response.blob();
       }
 
-      this.mangaService.createManga(this.updateMangaFg.value, blob).subscribe(data => {
+      this.mangaService.createManga(this.createMangaFg.value, blob).subscribe(data => {
         console.log("Photo sent!");
-        this.router.navigateByUrl("/home");
+        this.router.navigate(["/home"]);
       })
     } 
   }
