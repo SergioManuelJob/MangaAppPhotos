@@ -65,9 +65,21 @@ exports.findOne = (req, res) => {
 // Update a Bicycle by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
-  console.log(req.body.file)
-  console.log(req.body.filename)
-  Bicycle.update({title: req.body.title, pages: req.body.pages, volume: req.body.volume, genre: req.body.genre, filename: req.body.filename}, {
+
+  if (!req.body.title || !req.body.pages || !req.body.volume || !req.body.genre){
+    res.status(400).send({
+      message: "Content cannot be empty!"
+    });
+  }
+
+  const manga = {
+    title: req.body.title,
+    pages: req.body.pages,
+    volume: req.body.volume,
+    genre: req.body.genre,
+    filename: req.file ? req.file.filename : ""
+  }
+  Bicycle.update(manga, {
     where: { id: id }
   })
     .then(num => {
@@ -112,4 +124,5 @@ exports.delete = (req, res) => {
         message: "Could not delete Manga with id=" + id
       });
     });
+
 };

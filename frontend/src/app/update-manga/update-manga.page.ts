@@ -26,7 +26,6 @@ export class UpdateMangaPage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.updateMangaFg.reset();
     this.isSubmitted = false;
     this.capturedPhoto = "";
   }
