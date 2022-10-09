@@ -7,7 +7,7 @@ module.exports = app => {
   // Create a new manga
   router.post("/", upload.single('file'), bicycles.create);
 
-  // Retrieve all mangas
+  // Retrieve all mangas or if you decomment the other method of findAll you can retrieve them by their genre
   router.get("/", bicycles.findAll);
 
   // Retrieve a single manga with id

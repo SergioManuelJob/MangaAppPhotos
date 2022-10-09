@@ -41,6 +41,20 @@ exports.findAll = (req, res) => {
   })
 };
 
+// DECOMMENT THIS LINE TO GET MANGAS BY THEIR GENRE: By default mangas with "Acción" genre will be retrieved
+// exports.findAll = (req, res) => {
+//   Bicycle.findAll({where: { genre: "Acción" }})
+//     .then(data => {
+//       res.send(data);
+//     })
+//     .catch(err => {
+//       res.status(500).send({
+//         message:
+//           err.message || "Some error occurred while retrieving mangas."
+//       });
+//     });
+// };
+
 // Find a single Bicycle with an id
 exports.findOne = (req, res) => {
   const id = req.params.id;
@@ -77,7 +91,7 @@ exports.update = (req, res) => {
     pages: req.body.pages,
     volume: req.body.volume,
     genre: req.body.genre,
-    filename: req.file ? req.file.filename : ""
+    filename: req.file
   }
   Bicycle.update(manga, {
     where: { id: id }

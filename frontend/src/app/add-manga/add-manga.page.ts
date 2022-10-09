@@ -15,6 +15,7 @@ export class AddMangaPage implements OnInit {
   createMangaFg: FormGroup;
   isSubmitted: boolean = false;
   capturedPhoto: string = "";
+  
 
   constructor(private mangaService: MangaService, 
     private activatedRoute: ActivatedRoute,
@@ -70,7 +71,7 @@ export class AddMangaPage implements OnInit {
       }
       this.mangaService.createManga(this.createMangaFg.value, blob).subscribe(data => {
         console.log("Photo sent!");
-        this.router.navigate(["/home"]);
+        this.router.navigateByUrl("/home");       
       })
     } 
   }
