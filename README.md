@@ -12,7 +12,7 @@ The frontend was done with Ionic, it reaches the 4 endpoints of the backend that
 
 The backend was done using Sequelize, in a MySQL database. It has the 4 methods of GET, POST, PUT and DELETE, plus an additional get one that is used in the update for the frontend when fetching, and another one which is commented, where you can get all the mangas of an specific genre, it replaces the find all and it can be changed to find any other genres in specific, this wasn't explained in class.
 
-### Technology used
+### Technology used:
 
 Ionic, sequelize and MySQL.
 
