@@ -1,6 +1,6 @@
 # Manga App
 
-An app made with Ionic that displays manga's.
+An app made to displays manga's.
 
 ## Description
 
