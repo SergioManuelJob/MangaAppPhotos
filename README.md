@@ -1,93 +1,29 @@
-# Project Title
+# Manga App
 
-One Paragraph of the project description
+An app made with Ionic that displays manga's.
 
-Initially appeared on
-[gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2). But the page cannot open anymore so that is why I have moved it here.
+## Description
 
-## Getting Started
+### Frontend:
 
-These instructions will give you a copy of the project up and running on
-your local machine for development and testing purposes. See deployment
-for notes on deploying the project on a live system.
+The frontend was done with Ionic, it reaches the 4 endpoints of the backend that are the GET, PUT, POST and DELETE. It shows all the information of the object manga (minus the ID of course), has forms to post or update the same object (with the difference that in the update you can't change the image for security reasons), and has a button to delete said object. It also has a searchbar in which you can search mangas by their title, which wasn't explained in class.
 
-### Prerequisites
+### Backend:
 
-Requirements for the software and other tools to build, test and push 
-- [Example 1](https://www.example.com)
-- [Example 2](https://www.example.com)
+The backend was done using Sequelize, in a MySQL database. It has the 4 methods of GET, POST, PUT and DELETE, plus an additional get one that is used in the update for the frontend when fetching, and another one which is commented, where you can get all the mangas of an specific genre, it replaces the find all and it can be changed to find any other genres in specific, this wasn't explained in class.
 
-### Installing
+### Technology used
 
-A step by step series of examples that tell you how to get a development
-environment running
+Ionic, sequelize and MySQL.
 
-Say what the step will be
+### Preview:
 
-    Give the example
+![Screenshot](PreviewApp.png)
+![Screenshot](PreviewApp2.png)
 
-And repeat
 
-    until finished
 
-End with an example of getting some data out of the system or using it
-for a little demo
 
-## Running the tests
 
-Explain how to run the automated tests for this system
 
-### Sample Tests
 
-Explain what these tests test and why
-
-    Give an example
-
-### Style test
-
-Checks if the best practices and the right coding style has been used.
-
-    Give an example
-
-## Deployment
-
-Add additional notes to deploy this on a live system
-
-## Built With
-
-  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
-    for the Code of Conduct
-  - [Creative Commons](https://creativecommons.org/) - Used to choose
-    the license
-
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
-of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
-available, see the [tags on this
-repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
-
-## Authors
-
-  - **Billie Thompson** - *Provided README Template* -
-    [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of
-[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
-who participated in this project.
-
-## License
-
-This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
-Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
-details
-
-## Acknowledgments
-
-  - Hat tip to anyone whose code is used
-  - Inspiration
-  - etc
