@@ -1,16 +1,93 @@
-Manga App:
+# Project Title
 
-This is an app developed using Spring Boot, Ionic and MySQL for class. It's objective is to have a completely functional crud using a REST API model.
+One Paragraph of the project description
 
-This project has, in the frontend, a list with all the mangas that are in the database, in which they show their image, title, pages... A searchbar in which you can look up any mangas by their title for example (this was something not explained in class), buttons which delete a manga from the database, update them using a form to change their attributes or even create a brand new one filling the form with their respective attributes. The parameters users send to the web service also are controlled, so there can't be no errors in creating a new manga or updating it.
+Initially appeared on
+[gist](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2). But the page cannot open anymore so that is why I have moved it here.
 
-And in the backend we have the 4 CRUD methods get, delete, post and put, and also a get but searching by id that is used for the put, and another in which you can look up mangas by their genre and a List of manga is returned (this also wasn't explained in class). They all work in their respective endpoints, as documented in the Postman.
+## Getting Started
 
-Postman Link in which the endpoints are documented: https://documenter.getpostman.com/view/23431388/2s83tDpt1H
+These instructions will give you a copy of the project up and running on
+your local machine for development and testing purposes. See deployment
+for notes on deploying the project on a live system.
 
-This app as it was done in Ionic is for mobile exclusively, so the design was done thinking on that.
+### Prerequisites
 
-![Screenshot](PreviewApp.png)
-![Screenshot](PreviewApp2.png)
+Requirements for the software and other tools to build, test and push 
+- [Example 1](https://www.example.com)
+- [Example 2](https://www.example.com)
 
-And that's all. :)
+### Installing
+
+A step by step series of examples that tell you how to get a development
+environment running
+
+Say what the step will be
+
+    Give the example
+
+And repeat
+
+    until finished
+
+End with an example of getting some data out of the system or using it
+for a little demo
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Sample Tests
+
+Explain what these tests test and why
+
+    Give an example
+
+### Style test
+
+Checks if the best practices and the right coding style has been used.
+
+    Give an example
+
+## Deployment
+
+Add additional notes to deploy this on a live system
+
+## Built With
+
+  - [Contributor Covenant](https://www.contributor-covenant.org/) - Used
+    for the Code of Conduct
+  - [Creative Commons](https://creativecommons.org/) - Used to choose
+    the license
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code
+of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [Semantic Versioning](http://semver.org/) for versioning. For the versions
+available, see the [tags on this
+repository](https://github.com/PurpleBooth/a-good-readme-template/tags).
+
+## Authors
+
+  - **Billie Thompson** - *Provided README Template* -
+    [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of
+[contributors](https://github.com/PurpleBooth/a-good-readme-template/contributors)
+who participated in this project.
+
+## License
+
+This project is licensed under the [CC0 1.0 Universal](LICENSE.md)
+Creative Commons License - see the [LICENSE.md](LICENSE.md) file for
+details
+
+## Acknowledgments
+
+  - Hat tip to anyone whose code is used
+  - Inspiration
+  - etc
