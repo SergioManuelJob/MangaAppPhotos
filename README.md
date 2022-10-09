@@ -16,6 +16,10 @@ The backend was done using Sequelize, in a MySQL database. It has the 4 methods 
 
 Ionic, sequelize and MySQL.
 
+### Postman Documentation:
+
+Postman: https://documenter.getpostman.com/view/23431388/2s83ziN3x2
+
 ### Preview:
 
 ![Screenshot](PreviewApp.png)
